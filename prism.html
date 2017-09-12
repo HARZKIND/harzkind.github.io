@@ -5,12 +5,24 @@
     <title>Destiny 2 Prism Timer</title>
     <style>
         @keyframes prism {
-            0%   { background: #673AB7; }
-            33%  { background: #673AB7; }
-            34%  { background: #03A9F4; }
-            66%  { background: #03A9F4; }
-            67%  { background: #FFC107; }
-            100% { background: #FFC107; }
+            0% {
+                background: #673AB7;
+            }
+            33% {
+                background: #673AB7;
+            }
+            34% {
+                background: #03A9F4;
+            }
+            66% {
+                background: #03A9F4;
+            }
+            67% {
+                background: #FFC107;
+            }
+            100% {
+                background: #FFC107;
+            }
         }
         
         body,
@@ -31,6 +43,10 @@
             font-size: 50vw;
         }
     </style>
+</head>
+
+<body>
+    <h1 id="count">30</h1>
     <script>
         var output = document.getElementById('count');
 
@@ -48,10 +64,6 @@
 
         countdown();
     </script>
-</head>
-
-<body>
-    <h1 id="count">30</h1>
 </body>
 
 </html>

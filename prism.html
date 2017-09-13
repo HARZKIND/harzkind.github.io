@@ -34,37 +34,74 @@
             align-items: center;
             justify-content: center;
             background: #673AB7;
-            animation: prism 90s infinite;
+            margin: 0px;
         }
         
         h1 {
             color: white;
             font-family: Helvetica, Arial, sans-serif;
-            font-size: 50vw;
+            font-size: 40vw;
             text-align: center;
+            margin: -5vw 0px -5vw 0px;
+        }
+        
+        button {
+            font-family: Helvetica, Arial, sans-serif;
+            text-align: center;
+            color: white;
+            background-color: rgba(0,0,0,0.2);
+            border: 0;
+            border-radius: 5px;
+            width: 50vw;
+            height: 10vw;
+            font-size: 5vw;
+            align-items: center;
+            margin-top: 0px;
+        }
+        .run-animation {
+            animation: prism 90s infinite;
         }
     </style>
 </head>
 
-<body>
-    <h1 id="count">30</h1>
-    <script>
-        var output = document.getElementById('count');
-
-        function countdown() {
+<body id="body" class="run-animation">
+    <div>
+        <div><h1 id="count">30</h1></div>
+        <div id="button"><button onclick="reset()">RESET</button></div>
+        <script>
+            var output = document.getElementById('count');
             var count = 30;
-            var timerId = setInterval(function() {
-                count--;
-                output.innerHTML = count;
 
-                if (count == 0) {
-                    count = 30;
-                }
-            }, 1000);
-        }
+            function countdown() {
+                var timerId = setInterval(function() {
+                    count--;
+                    output.innerHTML = count;
 
-        countdown();
-    </script>
+                    if (count == 0) {
+                        count = 30;
+                    }
+                }, 1000);
+            }
+            function reset() {
+                count = 30;
+                //"use strict";
+                var element = document.getElementById("body");
+                element.classList.remove("run-animation");
+                void element.offsetWidth;
+                element.classList.add("run-animation");
+                document.getElementById("count").innerHTML = "30";
+            }
+
+            countdown();
+
+            document.body.onkeyup = function(e){
+            if(e.keyCode == 32){
+                console.log("Button Pressed");
+                reset();
+            }
+}
+        </script>
+    </div>
 </body>
 
 </html>

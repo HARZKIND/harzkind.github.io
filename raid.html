@@ -16,10 +16,15 @@
 </head>
 
 <body>
+    <p class="greetings">Hello World</p>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script>
         $( document ).ready(function() {
+            
             var apiKey = "005500ccaab5466fa021277bae3e91f7";
+            $(".greetings").click(fucntion( event ) {
+                alert("Cool!")                      ;
+            });
 
             $.ajax({
              url: "https://www.bungie.net/platform/Destiny/Manifest/InventoryItem/1274330687/",

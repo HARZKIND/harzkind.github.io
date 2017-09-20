@@ -26,6 +26,7 @@
 
         $json = json_decode(curl_exec($ch));
         echo $json->Response->data->inventoryItem->itemName; //Gjallarhorn
+        echo $apiKey;
     ?>
 </body>
 
